@@ -115,4 +115,28 @@ public class ParkingLot {
             System.out.println("Parking lot is empty\n");
         }
     }
+
+    public void getSlotNumbersFromColor(String color) {
+        if (noOfParkingSlots == 0) {
+            System.out.println("parking lot is not created\n");
+        } else if (colorCarMap.containsKey(color)) {
+            List<String> regNoList = colorCarMap.get(color);
+            List<Integer> slotList = new ArrayList<Integer>();
+            System.out.println();
+            for (int i = 0; i < regNoList.size(); i++) {
+                slotList.add(Integer.valueOf(regNoCarSlotMap.get(regNoList.get(i))));
+            }
+            sort(slotList);
+            for (int j = 0; j < slotList.size(); j++) {
+                if (!(j == slotList.size() - 1)) {
+                    System.out.print(slotList.get(j) + ", ");
+                } else {
+                    System.out.print(slotList.get(j));
+                }
+            }
+            System.out.println();
+        } else {
+            System.out.println("Not found\n");
+        }
+    }
 }

@@ -5,7 +5,7 @@ public enum Command {
     PARK("park"),
     LEAVE("leave"),
     STATUS("status"),
-    FETCH_CARE_FROM_COLOR("registration_numbers_for_cars_with_colour"),
+    FETCH_CAR_FROM_COLOR("registration_numbers_for_cars_with_colour"),
     FETCH_SLOT_FROM_COLOR("slot_numbers_for_cars_with_colour"),
     FETCH_SLOT_FROM_REG_NO("slot_number_for_registration_number");
     

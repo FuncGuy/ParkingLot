@@ -55,8 +55,22 @@ public abstract class AbstractProcessor {
                 }
                 parkingLot.getStatus();
                 break;
+
+            case FETCH_SLOT_FROM_COLOR:
+                if(inputStrArr.length != 2) {
+                    throw new Exception("Invalid no of arguments for command : " + command);
+                }
+                parkingLot.getSlotNumbersFromColor(inputStrArr[1]);  //color
+                break;
+            case FETCH_SLOT_FROM_REG_NO:
+                if(inputStrArr.length != 2) {
+                    throw new Exception("Invalid no of arguments for command : " + command);
+                }
+                //parkingLot.getSlotNumberFromRegNo(inputStrArr[1]);  //regNo
+                break;
         }
-    }
+        }
+
 
     public abstract void process() throws Exception;
 }

@@ -75,4 +75,15 @@ public class InteractiveProcessorTest {
         }
     }
 
+    @Test
+    public void should_get_slot_number_for_given_color(){
+        try {
+                processor.validateAndProcess("park KA-35-U-3784 Black");
+            processor.validateAndProcess("park KA-01-U-1234 White");
+                processor.validateAndProcess("slot_numbers_for_cars_with_colour White");
+        } catch (Exception e) {
+            fail("Car parking failed!!!" + e);
+        }
+    }
+
 }
