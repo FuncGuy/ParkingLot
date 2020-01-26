@@ -66,7 +66,7 @@ public abstract class AbstractProcessor {
                 if(inputStrArr.length != 2) {
                     throw new Exception("Invalid no of arguments for command : " + command);
                 }
-                //parkingLot.getSlotNumberFromRegNo(inputStrArr[1]);  //regNo
+                parkingLot.getSlotNumberFromRegNo(inputStrArr[1]);  //regNo
                 break;
         }
         }

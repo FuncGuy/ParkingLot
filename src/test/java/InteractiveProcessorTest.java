@@ -86,4 +86,15 @@ public class InteractiveProcessorTest {
         }
     }
 
+    @Test
+    public void should_get_slot_number_for_given_register_number(){
+        try {
+            processor.validateAndProcess("park KA-01-U-1234 White");
+            processor.validateAndProcess("park KA-01-U-12345 Black");
+            processor.validateAndProcess("slot_number_for_registration_number KA-01-U-12345");
+        } catch (Exception e) {
+            fail("Car parking failed!!!" + e);
+        }
+    }
+
 }

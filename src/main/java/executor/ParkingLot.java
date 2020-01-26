@@ -139,4 +139,14 @@ public class ParkingLot {
             System.out.println("Not found\n");
         }
     }
+
+    public void getSlotNumberFromRegNo(String regNo) {
+        if (noOfParkingSlots == 0) {
+            System.out.println("Sorry, parking lot is not created\n");
+        } else if (regNoCarSlotMap.containsKey(regNo)) {
+            System.out.println(regNoCarSlotMap.get(regNo));
+        } else {
+            System.out.println("Not found\n");
+        }
+    }
 }
