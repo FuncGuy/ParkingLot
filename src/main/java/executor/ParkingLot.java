@@ -74,4 +74,45 @@ public class ParkingLot {
             availableSlotList.remove(0);
         }
     }
+
+    public void leaveSlot(Integer slotNo) {
+        if (noOfParkingSlots == 0) {
+            System.out.println("parking lot is not created\\n");
+        } else if (slotCarMap.size() > 0) {
+            Car carToLeave = slotCarMap.get(slotNo);
+            if (carToLeave != null) {
+                slotCarMap.remove(slotNo);
+                regNoCarSlotMap.remove(carToLeave.getRegNo());
+                List<String> regNoList = colorCarMap.get(carToLeave.getColor());
+                if (regNoList.contains(carToLeave.getRegNo())) {
+                    regNoList.remove(carToLeave.getRegNo());
+                }
+                // Add the Lot No. back to available slot list.
+                availableSlotList.add(slotNo);
+                System.out.println("Slot number " + slotNo + " is free\n");
+            } else {
+                System.out.println("Slot number " + slotNo + " is already empty\n");
+            }
+        } else {
+            System.out.println("Parking lot is empty\n");
+        }
+    }
+
+    public void getStatus() {
+        if (noOfParkingSlots == 0) {
+            System.out.println("Sorry, parking lot is not created\n");
+        } else if (slotCarMap.size() > 0) {
+            System.out.println("Slot No.\tCar No.\tColor\n");
+            Car car;
+            for (int i = 1; i <= noOfParkingSlots; i++) {
+                if (slotCarMap.containsKey(i)) {
+                    car = slotCarMap.get(i);
+                    System.out.println(i + "\t" + car.getRegNo() + "\t" + car.getColor());
+                }
+            }
+            System.out.println();
+        } else {
+            System.out.println("Parking lot is empty\n");
+        }
+    }
 }

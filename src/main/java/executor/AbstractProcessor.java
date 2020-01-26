@@ -40,6 +40,21 @@ public abstract class AbstractProcessor {
                 String color = inputStrArr[2]; // color
                 parkingLot.parkCar(new Car(regNo, color));
                 break;
+
+            case LEAVE:
+                if(inputStrArr.length != 2) {
+                    throw new Exception("Invalid no of arguments for command : " + command);
+                }
+                int slotNo = Integer.parseInt(inputStrArr[1]);
+                parkingLot.leaveSlot(slotNo);
+                break;
+
+            case STATUS:
+                if(inputStrArr.length != 1) {
+                    throw new Exception("Invalid no of arguments for command : " + command);
+                }
+                parkingLot.getStatus();
+                break;
         }
     }
 

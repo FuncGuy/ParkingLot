@@ -33,7 +33,7 @@ public class InteractiveProcessorTest {
     }
 
     @Test
-    public void should_park_the_car(){
+    public void should_park_the_car() {
         try {
             processor.validateAndProcess("park KA-35-U-3784 Black");
         } catch (Exception e) {
@@ -43,10 +43,33 @@ public class InteractiveProcessorTest {
 
 
     @Test
-    public void car_parking_should_fail_when_the_slots_are_reached_maximum_capacity(){
+    public void car_parking_should_fail_when_the_slots_are_reached_maximum_capacity() {
         try {
-            for(int i = 0; i<7; i++)
-            processor.validateAndProcess("park KA-35-U-3784 Black");
+            for (int i = 0; i < 7; i++)
+                processor.validateAndProcess("park KA-35-U-3784 Black");
+        } catch (Exception e) {
+            fail("Car parking failed!!!" + e);
+        }
+    }
+
+    @Test
+    public void should_leave_the_second_slot() {
+        try {
+            for (int i = 0; i < 6; i++)
+                processor.validateAndProcess("park KA-35-U-3784 Black");
+                processor.validateAndProcess("leave 2");
+        } catch (Exception e) {
+            fail("Slot leave failed!!!" + e);
+        }
+
+    }
+
+    @Test
+    public void should_get_the_status_of_parking_lot(){
+        try {
+            for (int i = 0; i < 6; i++)
+                processor.validateAndProcess("park KA-35-U-3784 Black");
+            processor.validateAndProcess("status");
         } catch (Exception e) {
             fail("Car parking failed!!!" + e);
         }
