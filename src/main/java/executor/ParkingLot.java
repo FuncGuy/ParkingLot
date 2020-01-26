@@ -101,7 +101,7 @@ public class ParkingLot {
         if (noOfParkingSlots == 0) {
             System.out.println("Sorry, parking lot is not created\n");
         } else if (slotCarMap.size() > 0) {
-            System.out.println("Slot No.\tCar No.\tColor\n");
+            System.out.println("Slot No.\tRegistration No.\tColor\n");
             Car car;
             for (int i = 1; i <= noOfParkingSlots; i++) {
                 if (slotCarMap.containsKey(i)) {
