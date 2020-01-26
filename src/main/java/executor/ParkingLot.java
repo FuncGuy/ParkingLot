@@ -2,6 +2,8 @@ package executor;
 
 import java.util.*;
 
+import static java.util.Collections.sort;
+
 
 public class ParkingLot {
 
@@ -44,4 +46,32 @@ public class ParkingLot {
 
     }
 
+    public void parkCar(Car car) {
+        if (noOfParkingSlots == 0) {
+            System.out.println("parking lot is not created\n");
+            return;
+        } else if (slotCarMap.size() == noOfParkingSlots) {
+            System.out.println("Sorry, parking lot is full\n");
+            return;
+        } else {
+            sort(availableSlotList); // sorting is done to next available sort
+            int slot = availableSlotList.get(0);
+            slotCarMap.put(slot, car); // add car to next available slot
+            regNoCarSlotMap.put(car.getRegNo(), slot); // register in which slot car is parked
+            if (colorCarMap.containsKey(car.getColor())) {
+                List<String> regNoList = colorCarMap.get(car.getColor());
+                colorCarMap.remove(car.getColor());
+                regNoList.add(car.getRegNo());
+                colorCarMap.put(car.getColor(), regNoList);
+            } else {
+                // LinkedList because frequent updation is required
+                LinkedList<String> regNoList =
+                        new LinkedList<String>();
+                regNoList.add(car.getRegNo());
+                colorCarMap.put(car.getColor(), regNoList);
+            }
+            System.out.println("Allocated slot number: " + slot + "\n");
+            availableSlotList.remove(0);
+        }
+    }
 }
