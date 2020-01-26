@@ -4,10 +4,10 @@ import static executor.Command.findByName;
 
 public abstract class AbstractProcessor {
 
-    ParkingLot parkingLot = null;
+    ParkingLot parkingLot;
 
     public void validateAndProcess(String inputString) throws Exception {
-        //segregate the sentence by spaces
+        //split the sentence by spaces
         String[] inputStrArr = inputString.split(" ");
         //if input string is empty terminate
         if (inputStrArr[0].equals("")) {

@@ -6,7 +6,7 @@ import static org.junit.Assert.fail;
 
 public class InteractiveProcessorTest {
 
-    static InteractiveParkingLotProcessor processor = null;
+    static InteractiveParkingLotProcessor processor;
 
     @BeforeClass
     public static void setUp() throws Exception {

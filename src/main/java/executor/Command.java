@@ -23,10 +23,6 @@ public enum Command {
 	    }
 	    return null;
 	}
-	
-	public boolean equalsName(String otherName) {
-        return name.equals(otherName);
-    }
 
     public String toString() {
        return name;
