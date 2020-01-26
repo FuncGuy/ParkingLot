@@ -4,7 +4,6 @@ import java.util.*;
 
 import static java.util.Collections.sort;
 
-
 public class ParkingLot {
 
 	private int noOfParkingSlots = 0;
@@ -145,6 +144,26 @@ public class ParkingLot {
             System.out.println("Sorry, parking lot is not created\n");
         } else if (regNoCarSlotMap.containsKey(regNo)) {
             System.out.println(regNoCarSlotMap.get(regNo));
+        } else {
+            System.out.println("Not found\n");
+        }
+    }
+
+    public void getRegistrationNumbersFromColor(String color) {
+        if (noOfParkingSlots == 0) {
+            System.out.println("parking lot is not created\n");
+        } else if (colorCarMap.containsKey(color)) {
+            List<String> regNoList = colorCarMap.get(color);
+            System.out.println();
+            for (int i = 0; i < regNoList.size(); i++) {
+                //until all the registration number exhausts loop
+                if (!(i == regNoList.size() - 1)) {
+                    System.out.print(regNoList.get(i) + ",");
+                } else {
+                    System.out.print(regNoList.get(i));
+                }
+            }
+            System.out.println();
         } else {
             System.out.println("Not found\n");
         }

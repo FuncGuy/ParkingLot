@@ -68,6 +68,13 @@ public abstract class AbstractProcessor {
                 }
                 parkingLot.getSlotNumberFromRegNo(inputStrArr[1]);  //regNo
                 break;
+
+            case FETCH_CAR_FROM_COLOR:
+                if(inputStrArr.length != 2) {
+                    throw new Exception("Invalid no of arguments for command : " + command);
+                }
+                parkingLot.getRegistrationNumbersFromColor(inputStrArr[1]);  //color
+                break;
         }
         }
 

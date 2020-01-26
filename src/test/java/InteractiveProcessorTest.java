@@ -97,4 +97,14 @@ public class InteractiveProcessorTest {
         }
     }
 
+    @Test
+    public void should_get_registration_number_from_given_car_color(){
+            try {
+                processor.validateAndProcess("park KA-35-U-3784 Black");
+                processor.validateAndProcess("registration_numbers_for_cars_with_colour Black");
+            } catch (Exception e) {
+                fail("Car parking failed!!!" + e);
+            }
+        }
+
 }
