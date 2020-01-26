@@ -6,7 +6,7 @@ import java.io.FileReader;
 
 public class FileProcessor extends AbstractProcessor {
 
-	String filePath = null;
+	String filePath;
 
 	public FileProcessor(String filePath) {
 		this.filePath = filePath;

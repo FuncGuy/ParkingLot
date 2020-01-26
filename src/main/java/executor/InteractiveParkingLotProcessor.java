@@ -13,7 +13,4 @@ public class InteractiveParkingLotProcessor extends AbstractProcessor {
         	validateAndProcess(inputString);
         }
 	}
-
-	
-
 }

@@ -1,4 +1,4 @@
-package executor;
+package constants;
 
 public enum Command {
     CREATE("create_parking_lot"),

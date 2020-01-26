@@ -1,12 +1,10 @@
-package executor;
+package model;
 
-public class Car {
-	String regNo;
-	String color;
-	
+public class Car extends Vehicle {
+
 	public Car(String regNo, String color) {
-        this.regNo = regNo;
-        this.color = color;
+       super.regNo = regNo;
+       super.color = color;
     }
 
 	public String getRegNo() {
