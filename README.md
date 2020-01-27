@@ -13,4 +13,4 @@ Execute with the below command:
 ================================
 
 1) For intreactive mode run with "sh parking_lot.sh"
-2) For Filebased interaction run with "sh parking_lot.sh filename.txt"
+2) For File based interaction run with "sh parking_lot.sh filename.txt"
