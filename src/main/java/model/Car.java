@@ -2,18 +2,18 @@ package model;
 
 public class Car extends Vehicle {
 
-	public Car(String regNo, String color) {
+     public Car(String regNo, String color) {
        super.regNo = regNo;
        super.color = color;
-    }
+      }
 
 	public String getRegNo() {
-		return regNo;
+	        return regNo;    
 	}
 
 
 	public String getColor() {
-		return color;
+		return color;    
 	}
 
 	@Override
