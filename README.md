@@ -1,7 +1,7 @@
 Parking lot design features that are supported:
 ===============================================
 
-1) create the parking lot with give number of slots
+1) create a parking lot with give number of slots
 2) park the car with given registration number and color of the car
 3) status of the parking lot
 4) leave the slot
